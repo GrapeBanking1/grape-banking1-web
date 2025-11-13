@@ -1,0 +1,127 @@
+.nav-container {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(13, 6, 40, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    z-index: 1000;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-container--open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-icon-link {
+    display: none;
+  }
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #a855f7;
+}
+
+.nav-link.active {
+  color: #a855f7;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #a855f7;
+}
+
+/* Parallel Lines Menu Icon - Only for laptop and large screens */
+.menu-icon-link {
+  cursor: pointer;
+  padding: 8px;
+  transition: all 0.3s ease;
+  display: none; /* Hidden by default */
+}
+
+@media (min-width: 1024px) {
+  .menu-icon-link {
+    display: block; /* Show only on laptop and larger screens */
+  }
+}
+
+.parallel-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  width: 72px;
+  height: 16px;
+}
+
+.line {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3b82f6;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.menu-icon-link:hover .line::after {
+  transform: translateX(0);
+}
+
+.menu-icon-link:hover .line-1::after {
+  transition-delay: 0s;
+}
+
+.menu-icon-link:hover .line-2::after {
+  transition-delay: 0.3s;
+}

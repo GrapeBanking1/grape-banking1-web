@@ -1,0 +1,144 @@
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 3rem 2rem;
+  min-height: 70vh;
+  margin: 0 7rem;
+  background: radial-gradient(
+      ellipse at center bottom,
+      rgba(59, 130, 246, 0.06) 0%,
+      rgba(29, 78, 216, 0.04) 30%,
+      transparent 70%
+    ),
+    linear-gradient(
+      90deg,
+      #0d0628 0%,
+      rgba(29, 78, 216, 0.03) 20%,
+      rgba(59, 130, 246, 0.02) 50%,
+      rgba(29, 78, 216, 0.03) 80%,
+      #0d0628 100%
+    ),
+    linear-gradient(
+      180deg,
+      #0d0628 0%,
+      rgba(13, 6, 40, 0.98) 30%,
+      rgba(29, 78, 216, 0.02) 70%,
+      rgba(59, 130, 246, 0.04) 90%,
+      rgba(29, 78, 216, 0.05) 100%
+    ),
+    #0d0628;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin: 0;
+    gap: 2rem;
+    min-height: auto;
+  }
+}
+
+.content-section {
+  flex: 1;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .content-section {
+    max-width: 100%;
+  }
+}
+
+.grape-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .grape-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .grape-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.title-container {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.main-heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: Fahkwang, sans-serif;
+  font-size: 5.2em;
+  line-height: 0.9375;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: inline-block;
+  vertical-align: top;
+}
+
+@media (max-width: 768px) {
+  .main-heading {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 3em;
+  }
+}
+
+.sub-heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 1.35em;
+  font-weight: 400;
+  color: #cbd5e1;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .sub-heading {
+    font-size: 1rem;
+  }
+}
+
+/* Tablet view */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .card-section {
+    height: 19rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 19rem;
+    align-items: center;
+    overflow: hidden;
+  }
+}
