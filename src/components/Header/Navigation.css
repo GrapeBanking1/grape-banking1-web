@@ -51,6 +51,7 @@
   letter-spacing: 0.5px;
   transition: color 0.2s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .nav-link:hover {

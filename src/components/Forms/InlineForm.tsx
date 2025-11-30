@@ -1,26 +1,46 @@
 import React, { useState } from "react";
+import { WaitlistForm } from "./WaitlistForm";
 import "./InlineForm.css";
 
 interface FormData {
   email: string;
   fullName: string;
-  phone: string;
+  excitement: string;
+  extraFieldValue: string;
 }
 
 interface InlineFormProps {
   isModal?: boolean;
+  isMini?: boolean;
+  extraField?: string;
+  useEnhanced?: boolean;
+  onClose?: () => void;
 }
 
-export const InlineForm: React.FC<InlineFormProps> = ({ isModal = false }) => {
+export const InlineForm: React.FC<InlineFormProps> = ({
+  isModal = false,
+  isMini = false,
+  extraField,
+  useEnhanced = false,
+  onClose,
+}) => {
   const [formData, setFormData] = useState<FormData>({
     email: "",
     fullName: "",
-    phone: "",
+    excitement: "",
+    extraFieldValue: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  // If enhanced form is requested, use the comprehensive WaitlistForm
+  if (useEnhanced) {
+    return <WaitlistForm isModal={isModal} onClose={onClose} />;
+  }
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -41,15 +61,23 @@ export const InlineForm: React.FC<InlineFormProps> = ({ isModal = false }) => {
     // Reset form after success message
     setTimeout(() => {
       setIsSubmitted(false);
-      setFormData({ email: "", fullName: "", phone: "" });
+      setFormData({
+        email: "",
+        fullName: "",
+        excitement: "",
+        extraFieldValue: "",
+      });
     }, 3000);
   };
 
-  const isValid = formData.email && formData.fullName && formData.phone;
+  const isValid =
+    formData.email &&
+    formData.fullName &&
+    (isMini ? formData.extraFieldValue : formData.excitement);
 
   if (isSubmitted) {
     return (
-      <section className={`inline-form ${isModal ? 'inline-form--modal' : ''}`}>
+      <section className={`inline-form ${isModal ? "inline-form--modal" : ""}`}>
         <div className="container">
           <div className="form-success">
             <div className="success-icon">✅</div>
@@ -64,19 +92,21 @@ export const InlineForm: React.FC<InlineFormProps> = ({ isModal = false }) => {
   }
 
   return (
-    <section className={`inline-form ${isModal ? 'inline-form--modal' : ''}`}>
+    <section className={`inline-form ${isModal ? "inline-form--modal" : ""}`}>
       <div className="container">
         <div className="form-wrapper">
           <div className="form-header">
-            <h2>Join the Waitlist</h2>
+            <h2>{isMini ? "Join Early Access" : "Join the Waitlist"}</h2>
             <p>
-              Be among the first to experience the future of digital banking
+              {isMini
+                ? "Get notified when this feature launches"
+                : "Be among the first to experience the future of digital banking"}
             </p>
           </div>
 
-          <form className="waitlist-form" onSubmit={handleSubmit}>
-            <div className="form-grid">
-              <div className="form-group">
+          <form className="inline-waitlist-form" onSubmit={handleSubmit}>
+            <div className="inline-form-grid">
+              <div className="inline-form-group">
                 <input
                   type="text"
                   name="fullName"
@@ -84,11 +114,11 @@ export const InlineForm: React.FC<InlineFormProps> = ({ isModal = false }) => {
                   value={formData.fullName}
                   onChange={handleChange}
                   required
-                  className="form-input"
+                  className="inline-form-input"
                 />
               </div>
 
-              <div className="form-group">
+              <div className="inline-form-group">
                 <input
                   type="email"
                   name="email"
@@ -96,32 +126,60 @@ export const InlineForm: React.FC<InlineFormProps> = ({ isModal = false }) => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="form-input"
+                  className="inline-form-input"
                 />
               </div>
 
-              <div className="form-group">
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                />
-              </div>
+              {!isMini && (
+                <div className="inline-form-group">
+                  <select
+                    name="excitement"
+                    value={formData.excitement}
+                    onChange={handleChange}
+                    required
+                    className="inline-form-input"
+                  >
+                    <option value="" disabled>
+                      What excites you most?
+                    </option>
+                    <option value="ai-spending">
+                      AI-powered spending insights
+                    </option>
+                    <option value="goal-tracking">Smart goal tracking</option>
+                    <option value="budgeting">Automated budgeting</option>
+                    <option value="savings">High-yield savings</option>
+                    <option value="security">Bank-level security</option>
+                    <option value="simplicity">Simple, beautiful design</option>
+                  </select>
+                </div>
+              )}
+
+              {isMini && extraField && (
+                <div className="inline-form-group">
+                  <input
+                    type="text"
+                    name="extraFieldValue"
+                    placeholder={extraField}
+                    value={formData.extraFieldValue}
+                    onChange={handleChange}
+                    required
+                    className="inline-form-input"
+                  />
+                </div>
+              )}
 
               <button
                 type="submit"
                 disabled={!isValid || isSubmitting}
-                className="submit-btn"
+                className="inline-submit-btn"
               >
                 {isSubmitting ? (
                   <span className="loading">
                     <span className="spinner"></span>
                     Joining...
                   </span>
+                ) : isMini ? (
+                  "Join Early Access"
                 ) : (
                   "Join Waitlist"
                 )}

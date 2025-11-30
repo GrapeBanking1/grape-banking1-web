@@ -7,84 +7,187 @@ export const Features: React.FC = () => {
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
+
   const features = [
     {
-      category: "Security",
+      category: "Scribe AI™",
+      description:
+        "Your intelligent financial assistant that makes money decisions obvious and safe",
       items: [
         {
-          title: "Multi-Layer Encryption",
-          description: "Bank-grade AES-256 encryption protects all your data",
-          icon: "🔐",
-        },
-        {
-          title: "Biometric Authentication",
+          title: "Auto-Categorization",
           description:
-            "Face ID, Touch ID, and voice recognition for secure access",
-          icon: "👆",
+            "Automatically sorts your spending into smart categories without manual input",
+          icon: "🏷️",
         },
         {
-          title: "Real-time Fraud Detection",
+          title: "Proactive Nudges",
           description:
-            "AI-powered system monitors for suspicious activities 24/7",
-          icon: "🛡️",
+            "Get helpful alerts before you overspend or miss important financial opportunities",
+          icon: "�",
         },
         {
-          title: "Zero-Knowledge Architecture",
-          description: "We can't see your data even if we wanted to",
-          icon: "🔒",
-        },
-      ],
-    },
-    {
-      category: "AI Intelligence",
-      items: [
-        {
-          title: "Smart Spending Insights",
+          title: "Explain My Spend",
           description:
-            "Personalized analysis of your spending patterns and habits",
-          icon: "📊",
+            "Ask Scribe AI to break down your spending patterns in plain English",
+          icon: "💬",
         },
         {
-          title: "Predictive Budgeting",
-          description: "AI forecasts your future expenses and suggests budgets",
+          title: "Goal Coach",
+          description:
+            "AI-powered guidance to help you reach your financial goals faster",
           icon: "🎯",
         },
-        {
-          title: "Investment Recommendations",
-          description: "Tailored investment suggestions based on your goals",
-          icon: "📈",
-        },
-        {
-          title: "Bill Prediction",
-          description: "Never miss a payment with intelligent bill forecasting",
-          icon: "⏰",
-        },
       ],
     },
     {
-      category: "Global Banking",
+      category: "Smart Payments",
+      description:
+        "Lightning-fast payments with built-in intelligence to save you money",
       items: [
         {
-          title: "Multi-Currency Support",
-          description: "Hold and exchange 150+ currencies at real-time rates",
-          icon: "💱",
+          title: "Instant P2P",
+          description: "Send money to friends instantly without fees or delays",
+          icon: "⚡",
         },
         {
-          title: "Instant International Transfers",
-          description: "Send money worldwide in seconds, not days",
-          icon: "🌍",
-        },
-        {
-          title: "Local Payment Methods",
+          title: "Card Controls",
           description:
-            "Pay like a local anywhere with regional payment support",
+            "Smart card management with spending limits and merchant controls",
           icon: "💳",
         },
         {
           title: "Travel Mode",
           description:
-            "Automatic currency conversion and travel-friendly features",
+            "Automatic currency handling and travel-friendly payment settings",
           icon: "✈️",
+        },
+        {
+          title: "Fee-Avoidance Hints",
+          description: "Get warned about potential fees before they happen",
+          icon: "�",
+        },
+      ],
+    },
+    {
+      category: "Budgeting Without the Homework",
+      description:
+        "Effortless budgeting that works automatically in the background",
+      items: [
+        {
+          title: "Auto-Budgets",
+          description:
+            "Intelligent budgets that adapt to your spending patterns automatically",
+          icon: "📊",
+        },
+        {
+          title: "Left to Spend",
+          description: "Real-time view of how much you can safely spend today",
+          icon: "💵",
+        },
+        {
+          title: "30-Day Runway",
+          description:
+            "See exactly how long your money will last at your current spending rate",
+          icon: "📅",
+        },
+        {
+          title: "Smart Insights",
+          description:
+            "Understand your money patterns without complex charts or graphs",
+          icon: "🧠",
+        },
+      ],
+    },
+    {
+      category: "Safety",
+      description:
+        "Advanced security that protects you without getting in your way",
+      items: [
+        {
+          title: "Real-time Fraud Flags",
+          description:
+            "Instant alerts for suspicious activity with smart false-positive reduction",
+          icon: "�️",
+        },
+        {
+          title: "Biometrics",
+          description:
+            "Secure authentication using Face ID, Touch ID, and voice recognition",
+          icon: "👆",
+        },
+        {
+          title: "Device Trust",
+          description:
+            "Your devices learn your patterns to provide seamless yet secure access",
+          icon: "📱",
+        },
+        {
+          title: "Virtual Cards",
+          description:
+            "Generate secure virtual cards for online shopping and subscriptions",
+          icon: "💳",
+        },
+      ],
+    },
+    {
+      category: "Transparency",
+      description: "Complete clarity about your money with no hidden surprises",
+      items: [
+        {
+          title: "Plain-Language Statements",
+          description:
+            "Financial statements that actually make sense to real people",
+          icon: "�",
+        },
+        {
+          title: "Fee Clarifier",
+          description:
+            "Every fee explained in simple terms with a 'why this fee?' breakdown",
+          icon: "❓",
+        },
+        {
+          title: "Real-Time Updates",
+          description:
+            "See your balance and transactions update instantly, always accurate",
+          icon: "🔄",
+        },
+        {
+          title: "No Fine Print",
+          description:
+            "All terms and conditions written in clear, understandable language",
+          icon: "📋",
+        },
+      ],
+    },
+    {
+      category: "Coming Soon",
+      description:
+        "Exciting features on our roadmap that will make Grape even more powerful",
+      items: [
+        {
+          title: "Round-ups to Goals",
+          description:
+            "Automatically round up purchases and save the change toward your goals",
+          icon: "🎯",
+        },
+        {
+          title: "Subscription Killer",
+          description:
+            "AI that finds and cancels forgotten subscriptions you're not using",
+          icon: "❌",
+        },
+        {
+          title: "Verified Merchants",
+          description:
+            "Shop with confidence using our verified merchant network",
+          icon: "✅",
+        },
+        {
+          title: "Smart Investing",
+          description:
+            "AI-guided investment suggestions tailored to your financial situation",
+          icon: "📈",
         },
       ],
     },
@@ -94,10 +197,11 @@ export const Features: React.FC = () => {
     <div className="features-page">
       <div className="container">
         <div className="features-hero">
-          <h1>Powerful Features</h1>
-          <p>
-            Discover the cutting-edge technology that makes Grape the smartest
-            choice for digital banking
+          <h1>Features</h1>
+          <p className="features-intro">
+            Grape is a consumer banking experience powered by Scribe AI™ and
+            modern infrastructure—so everyday money decisions become obvious,
+            safe, and fast.
           </p>
         </div>
 
@@ -105,6 +209,7 @@ export const Features: React.FC = () => {
           <div key={categoryIndex} className="feature-category">
             <div className="category-header">
               <h2>{category.category}</h2>
+              <p className="category-description">{category.description}</p>
             </div>
 
             <div className="features-grid">
@@ -113,6 +218,11 @@ export const Features: React.FC = () => {
                   <div className="feature-icon">{feature.icon}</div>
                   <h3 className="feature-title">{feature.title}</h3>
                   <p className="feature-description">{feature.description}</p>
+                  <div className="feature-cta">
+                    <button className="mini-cta-button" onClick={openModal}>
+                      Join Early Access
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -120,12 +230,12 @@ export const Features: React.FC = () => {
         ))}
 
         <div className="features-cta">
-          <h2>Ready to experience the future?</h2>
+          <h2>Ready to experience the future of banking?</h2>
           <p>
             Join thousands of users who are already banking smarter with Grape
           </p>
           <button className="cta-button" onClick={openModal}>
-            Join Waitlist
+            Join Early Access
           </button>
         </div>
 
@@ -136,7 +246,11 @@ export const Features: React.FC = () => {
               <button className="modal-close" onClick={closeModal}>
                 ×
               </button>
-              <InlineForm isModal={true} />
+              <InlineForm
+                isModal={true}
+                useEnhanced={true}
+                onClose={closeModal}
+              />
             </div>
           </div>
         )}

@@ -69,3 +69,21 @@ body,
   width: 100%;
   height: 100%;
 }
+
+/* Global button and link cursor styling */
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Ensure clickable elements have pointer cursor */
+[onclick] {
+  cursor: pointer;
+}
