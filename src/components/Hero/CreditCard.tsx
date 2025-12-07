@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import "./CreditCard.css";
 import cardBarImage from "../../assets/Group 158.png";
 import sphereVideo from "../../assets/Sphere-video.mp4";
+import gIcon from "../../assets/G-icon.png";
+import grapeIcon from "../../assets/Grape-Image.png";
 
 export const CreditCard: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -19,16 +21,36 @@ export const CreditCard: React.FC = () => {
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
+    // Calculate distance from center (0 to 1)
+    const distanceFromCenterX = (x - centerX) / centerX; // -1 to 1
+    const distanceFromCenterY = (y - centerY) / centerY; // -1 to 1
+
     // Adjust sensitivity based on screen size
     const isMobile = window.innerWidth <= 768;
-    const sensitivity = isMobile ? 12 : 15; // More sensitive on mobile
 
-    // Only rotation for edge floating - no center movement
-    const rotateX = (y - centerY) / sensitivity;
-    const rotateY = (x - centerX) / sensitivity;
+    // Enhanced movement parameters
+    const translationSensitivity = isMobile ? 15 : 20; // Translation movement
+    const maxRotation = 25; // Maximum rotation in degrees
 
+    // Calculate rotations for uniform corner behavior
+    // Invert rotateX: cursor up should make card tilt up, cursor down should make card tilt down
+    const rotateX = Math.max(
+      -maxRotation,
+      Math.min(maxRotation, -distanceFromCenterY * maxRotation)
+    );
+    // Y-axis rotation: cursor left = card tilts left (negative), cursor right = card tilts right (positive)
+    const rotateY = Math.max(
+      -maxRotation,
+      Math.min(maxRotation, -distanceFromCenterX * maxRotation)
+    );
+
+    // Calculate translations - direct mapping for natural movement
+    const translateX = distanceFromCenterX * translationSensitivity;
+    const translateY = distanceFromCenterY * translationSensitivity;
+
+    // Apply enhanced 3D transformation
     card.style.transform = `
-      translate3d(0px, 0px, 0px) 
+      translate3d(${translateX}px, ${translateY}px, 0px) 
       scale3d(1, 1, 1) 
       rotateX(${rotateX}deg) 
       rotateY(${rotateY}deg) 
@@ -80,8 +102,20 @@ export const CreditCard: React.FC = () => {
         <div className="hero__card" ref={cardRef}>
           <div className="hero__card-content">
             <div className="hero__card-top">
-              <div className="hero__card-logo">grape</div>
-              <div className="hero__card-icon">g</div>
+              <div className="hero__card-logo">
+                <img
+                  src={grapeIcon}
+                  alt="Grape Banking Logo"
+                  className="logo-image"
+                />
+              </div>
+              <div className="hero__card-icon">
+                <img
+                  src={gIcon}
+                  alt="Grape G Icon"
+                  className="hero__card-icon-img"
+                />
+              </div>
             </div>
             <div className="hero__card-bottom">
               <p className="hero__card-text">4323 7645 2828 0713</p>

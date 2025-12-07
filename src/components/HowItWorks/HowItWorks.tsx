@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./HowItWorks.css";
 
 export const HowItWorks: React.FC = () => {
+  const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
   const steps = [
     {
       number: "01",
@@ -30,6 +31,28 @@ export const HowItWorks: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -30px 0px",
+      }
+    );
+
+    stepsRef.current.forEach((step) => {
+      if (step) observer.observe(step);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="how-it-works">
       <div className="container">
@@ -40,7 +63,14 @@ export const HowItWorks: React.FC = () => {
 
         <div className="steps">
           {steps.map((step, index) => (
-            <div key={index} className="step">
+            <div
+              key={index}
+              className="step"
+              ref={(el) => {
+                stepsRef.current[index] = el;
+              }}
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
               <div className="step__number">{step.number}</div>
               <div className="step__icon">{step.icon}</div>
               <h3 className="step__title">{step.title}</h3>

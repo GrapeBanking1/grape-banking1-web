@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./ValueProps.css";
 
 export const ValueProps: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const props = [
     {
       icon: "🔐",
@@ -28,8 +30,31 @@ export const ValueProps: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all cards
+    cardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="value-props">
+    <section className="value-props" ref={sectionRef}>
       <div className="container">
         <div className="value-props__header">
           <h2>Why Choose Grape?</h2>
@@ -41,7 +66,14 @@ export const ValueProps: React.FC = () => {
 
         <div className="value-props__grid">
           {props.map((prop, index) => (
-            <div key={index} className="value-prop">
+            <div
+              key={index}
+              className="value-prop"
+              ref={(el) => {
+                cardsRef.current[index] = el;
+              }}
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
               <div className="value-prop__icon">{prop.icon}</div>
               <h3 className="value-prop__title">{prop.title}</h3>
               <p className="value-prop__description">{prop.description}</p>

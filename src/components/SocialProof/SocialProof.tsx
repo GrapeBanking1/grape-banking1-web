@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./SocialProof.css";
 
 export const SocialProof: React.FC = () => {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const testimonialsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    if (statsRef.current) observer.observe(statsRef.current);
+    if (testimonialsRef.current) observer.observe(testimonialsRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   const stats = [
     { number: "500K+", label: "Active Users" },
     { number: "$2.5B+", label: "Transactions Processed" },
@@ -37,13 +61,17 @@ export const SocialProof: React.FC = () => {
     <section className="social-proof">
       <div className="container">
         {/* Stats Section */}
-        <div className="stats">
+        <div className="stats" ref={statsRef}>
           <div className="stats__header">
             <h2>Trusted by millions worldwide</h2>
           </div>
           <div className="stats__grid">
             {stats.map((stat, index) => (
-              <div key={index} className="stat">
+              <div
+                key={index}
+                className="stat"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <div className="stat__number">{stat.number}</div>
                 <div className="stat__label">{stat.label}</div>
               </div>
@@ -52,13 +80,17 @@ export const SocialProof: React.FC = () => {
         </div>
 
         {/* Testimonials Section */}
-        <div className="testimonials">
+        <div className="testimonials" ref={testimonialsRef}>
           <div className="testimonials__header">
             <h3>What our users say</h3>
           </div>
           <div className="testimonials__grid">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial">
+              <div
+                key={index}
+                className="testimonial"
+                style={{ animationDelay: `${index * 0.15}s` }}
+              >
                 <div className="testimonial__content">
                   "{testimonial.content}"
                 </div>

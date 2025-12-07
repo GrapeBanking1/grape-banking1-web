@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Footer.css";
+import grapeIcon from "../../assets/Grape-Image.png";
 
 export const Footer: React.FC = () => {
   return (
@@ -8,7 +9,13 @@ export const Footer: React.FC = () => {
       <div className="footer-content">
         <div className="footer-main">
           <div className="footer-brand">
-            <div className="footer-logo">grape</div>
+            <div className="footer-logo">
+              <img
+                src={grapeIcon}
+                alt="Grape Banking Logo"
+                className="logo-image"
+              />
+            </div>
             <p className="footer-tagline">
               We build financial clarity and safety into every tap—no jargon, no
               guesswork.
@@ -49,10 +56,10 @@ export const Footer: React.FC = () => {
 
           <div className="social-links">
             <a
-              href="https://twitter.com/grapebanking"
+              href="https://x.com/GrapeBankingINC"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Twitter"
+              aria-label="X (Twitter)"
             >
               <svg
                 width="20"
@@ -64,7 +71,7 @@ export const Footer: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/company/grapebanking"
+              href="https://www.linkedin.com/company/grapeappinc/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -79,7 +86,7 @@ export const Footer: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://instagram.com/grapebanking"
+              href="https://www.instagram.com/grapebankinginc/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"

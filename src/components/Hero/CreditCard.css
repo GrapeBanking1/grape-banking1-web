@@ -195,6 +195,15 @@
 .hero__card-icon {
   font-size: 1.5rem;
   color: #eeedf2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__card-icon-img {
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: contain;
 }
 
 .hero__card-text {

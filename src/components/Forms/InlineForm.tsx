@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { WaitlistForm } from "./WaitlistForm";
 import "./InlineForm.css";
 
@@ -24,6 +24,7 @@ export const InlineForm: React.FC<InlineFormProps> = ({
   useEnhanced = false,
   onClose,
 }) => {
+  const formRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState<FormData>({
     email: "",
     fullName: "",
@@ -32,6 +33,28 @@ export const InlineForm: React.FC<InlineFormProps> = ({
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (!isModal) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-in");
+            }
+          });
+        },
+        {
+          threshold: 0.2,
+          rootMargin: "0px 0px -30px 0px",
+        }
+      );
+
+      if (formRef.current) observer.observe(formRef.current);
+
+      return () => observer.disconnect();
+    }
+  }, [isModal]);
 
   // If enhanced form is requested, use the comprehensive WaitlistForm
   if (useEnhanced) {
@@ -94,7 +117,7 @@ export const InlineForm: React.FC<InlineFormProps> = ({
   return (
     <section className={`inline-form ${isModal ? "inline-form--modal" : ""}`}>
       <div className="container">
-        <div className="form-wrapper">
+        <div className="form-wrapper" ref={formRef}>
           <div className="form-header">
             <h2>{isMini ? "Join Early Access" : "Join the Waitlist"}</h2>
             <p>
