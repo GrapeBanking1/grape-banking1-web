@@ -17,19 +17,19 @@ export const Navigation: React.FC<NavigationProps> = ({
         isMobileMenuOpen ? "nav-container--open" : ""
       }`}
     >
-      <Link to="/about" className="nav-link">
+      <Link to="/about" className="nav-link" onClick={onLinkClick}>
         About
       </Link>
-      <Link to="/features" className="nav-link">
+      <Link to="/features" className="nav-link" onClick={onLinkClick}>
         Features
       </Link>
-      <Link to="/security" className="nav-link">
+      <Link to="/security" className="nav-link" onClick={onLinkClick}>
         Security
       </Link>
-      <Link to="/help" className="nav-link">
+      <Link to="/help" className="nav-link" onClick={onLinkClick}>
         Help
       </Link>
-      <Link to="/download" className="nav-link">
+      <Link to="/download" className="nav-link" onClick={onLinkClick}>
         Download
       </Link>
       <div className="menu-icon-link">
