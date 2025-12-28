@@ -6,27 +6,30 @@ export const HowItWorks: React.FC = () => {
   const steps = [
     {
       number: "01",
-      title: "Download & Sign Up",
+      title: "Download & Create an Accountp",
       description:
-        "Download the Grape app and create your account in under 2 minutes",
+        "Download the Grape app and complete a guided signup designed for speed and security.",
       icon: "📱",
     },
     {
       number: "02",
       title: "Verify Your Identity",
-      description: "Quick verification using AI-powered document scanning",
+      description:
+        "Complete a secure identity verification process using modern verification technology.",
       icon: "✅",
     },
     {
       number: "03",
-      title: "Add Your Cards",
-      description: "Link your existing cards or get a new Grape virtual card",
+      title: "Add Payment Methods",
+      description:
+        "Link existing cards or use a Grape virtual card for everyday digital payments.",
       icon: "💳",
     },
     {
       number: "04",
-      title: "Start Banking",
-      description: "Enjoy seamless banking with advanced security and insights",
+      title: "Start Using Grape",
+      description:
+        "Send, receive, and manage money while gaining clearer insight into your financial activity.",
       icon: "🚀",
     },
   ];
@@ -58,7 +61,7 @@ export const HowItWorks: React.FC = () => {
       <div className="container">
         <div className="how-it-works__header">
           <h2>How It Works</h2>
-          <p>Get started with Grape in 4 simple steps</p>
+          <p>Getting started with Grape is simple and intuitive.</p>
         </div>
 
         <div className="steps">

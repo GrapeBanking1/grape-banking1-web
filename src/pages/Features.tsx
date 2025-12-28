@@ -12,30 +12,30 @@ export const Features: React.FC = () => {
     {
       category: "Scribe AI™",
       description:
-        "Your intelligent financial assistant that makes money decisions obvious and safe",
+        "Your intelligent financial assistant that makes money decisions obvious and safe. Scribe AI™ works quietly in the background to help users understand spending, anticipate issues, and make better financial choices—without requiring constant input.",
       items: [
         {
           title: "Auto-Categorization",
           description:
-            "Automatically sorts your spending into smart categories without manual input",
+            "Automatically organizes transactions into smart categories so users always know where their money is going—no manual tagging required.",
           icon: "🏷️",
         },
         {
           title: "Proactive Nudges",
           description:
-            "Get helpful alerts before you overspend or miss important financial opportunities",
+            "Helpful, timely alerts designed to warn users before they overspend, miss a bill, or run into avoidable financial friction.",
           icon: "�",
         },
         {
           title: "Explain My Spend",
           description:
-            "Ask Scribe AI to break down your spending patterns in plain English",
+            "Ask Scribe AI™ questions like “Why did I spend more this month?” and receive clear, plain-English explanations—no charts required.",
           icon: "💬",
         },
         {
           title: "Goal Coach",
           description:
-            "AI-powered guidance to help you reach your financial goals faster",
+            "AI-powered guidance that helps users stay on track toward savings, spending, or personal financial goals with adaptive suggestions.",
           icon: "🎯",
         },
       ],
@@ -43,28 +43,30 @@ export const Features: React.FC = () => {
     {
       category: "Smart Payments",
       description:
-        "Lightning-fast payments with built-in intelligence to save you money",
+        "Fast payments with built-in intelligence. Payments on Grape aren’t just fast—they’re informed, controlled, and transparent.",
       items: [
         {
           title: "Instant P2P",
-          description: "Send money to friends instantly without fees or delays",
+          description:
+            "Send money to friends and family instantly, with real-time confirmation and no unnecessary delays.",
           icon: "⚡",
         },
         {
           title: "Card Controls",
           description:
-            "Smart card management with spending limits and merchant controls",
+            "Set spending limits, control merchant categories, and manage cards in real time directly from the app.",
           icon: "💳",
         },
         {
           title: "Travel Mode",
           description:
-            "Automatic currency handling and travel-friendly payment settings",
+            "Automatically adjusts payment settings when traveling, including currency handling and security preferences.",
           icon: "✈️",
         },
         {
           title: "Fee-Avoidance Hints",
-          description: "Get warned about potential fees before they happen",
+          description:
+            "Get notified before potential fees occur, helping users avoid unnecessary charges before they happen.",
           icon: "�",
         },
       ],
@@ -72,29 +74,30 @@ export const Features: React.FC = () => {
     {
       category: "Budgeting Without the Homework",
       description:
-        "Effortless budgeting that works automatically in the background",
+        "Effortless budgeting that runs in the background. Grape removes the friction of traditional budgeting by making it automatic and adaptive.",
       items: [
         {
           title: "Auto-Budgets",
           description:
-            "Intelligent budgets that adapt to your spending patterns automatically",
+            "Budgets that intelligently adjust based on real spending behavior—not rigid rules.",
           icon: "📊",
         },
         {
           title: "Left to Spend",
-          description: "Real-time view of how much you can safely spend today",
+          description:
+            "A real-time view of how much money is safe to spend today, after accounting for upcoming obligations",
           icon: "💵",
         },
         {
           title: "30-Day Runway",
           description:
-            "See exactly how long your money will last at your current spending rate",
+            "See how long current balances will last at your present spending pace—updated dynamically.",
           icon: "📅",
         },
         {
           title: "Smart Insights",
           description:
-            "Understand your money patterns without complex charts or graphs",
+            "Understand financial patterns clearly without complex dashboards or overwhelming data.",
           icon: "🧠",
         },
       ],
@@ -102,60 +105,61 @@ export const Features: React.FC = () => {
     {
       category: "Safety",
       description:
-        "Advanced security that protects you without getting in your way",
+        "Advanced protection that stays out of your way. Security is built into the platform—not layered on top.",
       items: [
         {
           title: "Real-time Fraud Flags",
           description:
-            "Instant alerts for suspicious activity with smart false-positive reduction",
+            "Instant alerts for suspicious activity, with intelligent filtering designed to reduce false positives.",
           icon: "�️",
         },
         {
           title: "Biometrics",
           description:
-            "Secure authentication using Face ID, Touch ID, and voice recognition",
+            "Secure access using Face ID, Touch ID, and other supported biometric technologies.",
           icon: "👆",
         },
         {
           title: "Device Trust",
           description:
-            "Your devices learn your patterns to provide seamless yet secure access",
+            "Recognizes trusted devices and usage patterns to maintain security without constant friction.",
           icon: "📱",
         },
         {
           title: "Virtual Cards",
           description:
-            "Generate secure virtual cards for online shopping and subscriptions",
+            "Generate secure virtual cards for online purchases, subscriptions, and one-time payments.",
           icon: "💳",
         },
       ],
     },
     {
       category: "Transparency",
-      description: "Complete clarity about your money with no hidden surprises",
+      description:
+        "No hidden fees. No confusing language. No surprises.\nGrape is designed to make financial information understandable to real people.",
       items: [
         {
           title: "Plain-Language Statements",
           description:
-            "Financial statements that actually make sense to real people",
+            "Statements written so users can actually understand what happened with their money.",
           icon: "�",
         },
         {
           title: "Fee Clarifier",
           description:
-            "Every fee explained in simple terms with a 'why this fee?' breakdown",
+            "Every fee explained clearly, including why it exists and when it applies.",
           icon: "❓",
         },
         {
           title: "Real-Time Updates",
           description:
-            "See your balance and transactions update instantly, always accurate",
+            "Balances and transactions update instantly, providing an always-accurate view of finances.",
           icon: "🔄",
         },
         {
           title: "No Fine Print",
           description:
-            "All terms and conditions written in clear, understandable language",
+            "Terms and conditions written in clear, human language—not legal riddles.",
           icon: "📋",
         },
       ],
@@ -163,30 +167,30 @@ export const Features: React.FC = () => {
     {
       category: "Coming Soon",
       description:
-        "Exciting features on our roadmap that will make Grape even more powerful",
+        "The next phase of intelligent finance. Features currently on the roadmap to expand the Grape ecosystem.",
       items: [
         {
           title: "Round-ups to Goals",
           description:
-            "Automatically round up purchases and save the change toward your goals",
+            "Automatically round up purchases and save the difference toward personalized goals.",
           icon: "🎯",
         },
         {
           title: "Subscription Killer",
           description:
-            "AI that finds and cancels forgotten subscriptions you're not using",
+            "AI that identifies unused subscriptions and helps users cancel what they don’t need.",
           icon: "❌",
         },
         {
           title: "Verified Merchants",
           description:
-            "Shop with confidence using our verified merchant network",
+            "A trusted merchant network designed to reduce fraud and improve confidence when spending.",
           icon: "✅",
         },
         {
           title: "Smart Investing",
           description:
-            "AI-guided investment suggestions tailored to your financial situation",
+            "AI-guided investment insights tailored to a user’s financial profile and risk awareness.(Educational guidance only.)",
           icon: "📈",
         },
       ],
@@ -199,9 +203,13 @@ export const Features: React.FC = () => {
         <div className="features-hero">
           <h1>Features</h1>
           <p className="features-intro">
-            Grape is a consumer banking experience powered by Scribe AI™ and
-            modern infrastructure—so everyday money decisions become obvious,
-            safe, and fast.
+            Grape is a modern consumer banking experience powered by Scribe AI™
+            and secure, scalable infrastructure—so everyday money decisions
+            become obvious, safe, and fast.
+          </p>
+          <p className="features-intro">
+            Every feature is designed to reduce friction, remove guesswork, and
+            give users confidence in how they manage their money.
           </p>
         </div>
 
@@ -232,7 +240,8 @@ export const Features: React.FC = () => {
         <div className="features-cta">
           <h2>Ready to experience the future of banking?</h2>
           <p>
-            Join thousands of users who are already banking smarter with Grape
+            Join early users who are choosing clarity, control, and smarter
+            money decisions with Grape.
           </p>
           <button className="cta-button" onClick={openModal}>
             Join Early Access

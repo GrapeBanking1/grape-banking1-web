@@ -106,8 +106,8 @@ export const About: React.FC = () => {
               margin: "0 auto",
             }}
           >
-            Grape makes money management effortless and trustworthy—so people
-            can focus on life, not line items.
+            To redefine how people interact with money—making finance clearer,
+            safer, and more intelligent for everyone.
           </p>
         </div>
 
@@ -131,7 +131,7 @@ export const About: React.FC = () => {
               fontWeight: "600",
             }}
           >
-            Our Story
+            Our Vision
           </h2>
           <p
             style={{
@@ -143,10 +143,8 @@ export const About: React.FC = () => {
               margin: "0 auto",
             }}
           >
-            We're building an AI-enhanced wallet that turns complex financial
-            noise into clear, helpful actions. That means safer payments,
-            smarter decisions, and honest transparency—delivered with delightful
-            design.
+            To redefine how people interact with money—making finance clearer,
+            safer, and more intelligent for everyone.
           </p>
         </div>
 

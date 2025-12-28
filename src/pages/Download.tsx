@@ -90,10 +90,11 @@ export const Download: React.FC = () => {
 
             {!appsLive && (
               <div className="notify-section">
-                <h3>Get Notified</h3>
+                <h3>Get Notified at Launch</h3>
                 <p>
-                  Click on any store badge above to join our early access
-                  waitlist and be notified the moment Grape launches.
+                  Join our early access waitlist to receive updates, early
+                  feature access, and a notification the moment Grape becomes
+                  available.
                 </p>
               </div>
             )}
@@ -145,22 +146,22 @@ export const Download: React.FC = () => {
               {
                 icon: "🤖",
                 title: "Scribe AI™",
-                desc: "Smart financial assistant",
+                desc: "An intelligent financial assistant designed to explain spending, surface insights, and guide better decisions.",
               },
               {
                 icon: "⚡",
                 title: "Instant Payments",
-                desc: "Lightning-fast transfers",
+                desc: "Fast, reliable transfers with real-time updates and visibility.",
               },
               {
                 icon: "🛡️",
                 title: "Bank-Grade Security",
-                desc: "Your money, protected",
+                desc: "Modern encryption, secure authentication, and continuous monitoring to help protect your account.",
               },
               {
                 icon: "📊",
                 title: "Smart Insights",
-                desc: "Understand your spending",
+                desc: "Clear, easy-to-understand views of your financial activity—without complexity.",
               },
             ].map((feature, index) => (
               <div key={index} className="feature-item">
